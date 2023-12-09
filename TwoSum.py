@@ -4,25 +4,38 @@
 
 
 def initializeArray(numbers,n):
-    for i in range(0,n):
+    for i in range(n):
         numbers.append(int(input("numbers["+str(i)+"]: ")))
     return numbers
 
 def printArray(numbers,n):
-    for i in range(0,n):
+    for i in range(n):
         print(numbers[i])
 
 
-def twoSum(numbers,n,target):
-    for i in range(0,n):
+def twoSumONSquared(numbers,n,target):
+    for i in range(n):
         for j in range(0,n):
             if(numbers[i] + numbers[j] == target and i != j):
                 print(str(i)+" "+str(j))
                 return 0
+            
+def twoSwumON(numbers,n,target):
+    complement_dict = {}
 
+    for i in range(n):
+        complement = target - numbers[i]
+        if complement in complement_dict:
+            print([complement_dict[complement],i])
+            return 0
+
+        complement_dict[numbers[i]] = i
+    
+    print("No such pair found!")
+    return 0
 
 numbers = []
 n = int(input("n: "))
 target = int(input("target: "))
 numbers = initializeArray(numbers,n)
-twoSum(numbers,n,target)
+twoSumONSquared(numbers,n,target)
