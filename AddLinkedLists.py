@@ -60,8 +60,8 @@ def addLinkedListNumbers(n: ListNode, m: ListNode) -> ListNode:
         if hold != 0:
             start.next = ListNode(hold)
             start = start.next
-    else:
-        while n != None:
+    else:942
+        while m != None:
             mDigit : int = m.val
             nDigit : int  = 0
             if n != None:
